@@ -29,7 +29,7 @@ def getipaddr():
     return regex.search(str(get.text)).group(1)
 
 def nosignal():
-    url = 'http://thefirefox12537.github.io/streams/nosignal'
+    url = 'https://raw.githubusercontent.com/halakkitach/ONLINE/master/erorya/1infoku.m3u8'
     m3u8_get = requests.get(f"{url}/index.m3u8").text
     for ts in ['01.m3u8', '02.m3u8']:
         m3u8_get = m3u8_get.replace(ts, f"{url}/{ts}")
