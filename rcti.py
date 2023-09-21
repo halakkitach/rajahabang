@@ -18,7 +18,7 @@ parser.add_argument("-n", "--channel-name", required=True, help="channel name")
 parser.add_argument("output", nargs="?", help="output file")
 args = parser.parse_args()
 
-rplus_url = 'rctiplus.com'
+rplus_url = 'https://video.sindonews.com/tv/'
 windows = False
 if 'win' in sys.platform:
     windows = True
