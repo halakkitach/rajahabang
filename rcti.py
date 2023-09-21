@@ -40,9 +40,9 @@ def grab(name):
     headers['Accept'] = '*/*';
     headers['X-Forwarded-For'] = getipaddr()
     headers['Accept-Language'] = 'en-US,en;q=0.5'
-    headers['Origin'] = f'https://www.{rplus_url}/'
+    headers['Origin'] = f'https://embed.rctiplus.com/'
     headers['DNT'] = '1'
-    headers['Referer'] = f'https://embed.{rplus_url}/'
+    headers['Referer'] = f'https://embed.rctiplus.com/'
     headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Allow-Headers'] = 'content-type'
 
