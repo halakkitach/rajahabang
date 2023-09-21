@@ -18,7 +18,7 @@ parser.add_argument("-n", "--channel-name", required=True, help="channel name")
 parser.add_argument("output", nargs="?", help="output file")
 args = parser.parse_args()
 
-rplus_url = 'https://video.sindonews.com/tv/'
+rplus_url = 'rctiplus.com'
 windows = False
 if 'win' in sys.platform:
     windows = True
@@ -40,14 +40,14 @@ def grab(name):
     headers['Accept'] = '*/*';
     headers['X-Forwarded-For'] = getipaddr()
     headers['Accept-Language'] = 'en-US,en;q=0.5'
-    headers['Origin'] = f'https://embed.rctiplus.com/'
+    headers['Origin'] = f'https://www.{rplus_url}/'
     headers['DNT'] = '1'
-    headers['Referer'] = f'https://embed.rctiplus.com/'
+    headers['Referer'] = f'https://embed.{rplus_url}/'
     headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Allow-Headers'] = 'content-type'
 
     try:
-        get = s.get(f"https://embed.{rplus_url}/live/{name}/inewstv", headers=headers, verify=False)
+        get = s.get(f"https://embed.{rplus_url}/live/{name}/inewsid", headers=headers, verify=False)
 
         findstr = r'(aHR0cHM6[-A-Z0-9+&@#\/%=~_|$?!:,.]*[A-Z0-9+&@#\/%=~_|$])'
         regex = re.compile(findstr, re.IGNORECASE)
@@ -87,7 +87,7 @@ for channel in \
     "rcti",    \
     "mnctv",   \
     "gtv",     \
-    "inewstv":
+    "inews":
     if args.channel_name == channel:
         nochannel = False
         break
