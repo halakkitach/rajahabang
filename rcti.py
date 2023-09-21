@@ -47,7 +47,7 @@ def grab(name):
     headers['Access-Control-Allow-Headers'] = 'content-type'
 
     try:
-        get = s.get(f"https://embed.{rplus_url}/live/{name}/inewsid", headers=headers, verify=False)
+        get = s.get(f"https://embed.{rplus_url}/live/{name}/inewstv", headers=headers, verify=False)
 
         findstr = r'(aHR0cHM6[-A-Z0-9+&@#\/%=~_|$?!:,.]*[A-Z0-9+&@#\/%=~_|$])'
         regex = re.compile(findstr, re.IGNORECASE)
@@ -87,7 +87,7 @@ for channel in \
     "rcti",    \
     "mnctv",   \
     "gtv",     \
-    "inews":
+    "inewstv":
     if args.channel_name == channel:
         nochannel = False
         break
